@@ -12,7 +12,12 @@
   Referrer-Policy: strict-origin-when-cross-origin
   
   # Restrict browser APIs / hardware access
-  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), screen-wake-lock=(), accelerometer=(), gyroscope=(), magnetometer=()
   
-  # Content Security Policy (Allows Google Fonts & Self-Hosted Assets)
-  Content-Security-Policy: default-src 'self'; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self'; img-src 'self' data:; connect-src 'self' https://formspree.io https://api.web3forms.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' mailto: https://formspree.io https://api.web3forms.com;
+  # Cross-Origin Isolation & Resource Protection
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+  X-Permitted-Cross-Domain-Policies: none
+  
+  # Content Security Policy (No inline styles/scripts, Google Fonts allowed, unused endpoints removed)
+  Content-Security-Policy: default-src 'self'; font-src 'self' https://fonts.gstatic.com; style-src 'self' https://fonts.googleapis.com; script-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; frame-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests;

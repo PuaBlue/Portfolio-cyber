@@ -1,0 +1,9 @@
+# Security Contact Information for Paula Villegas (@puasec)
+# In accordance with RFC 9116
+
+Contact: https://www.linkedin.com/in/puasec/
+Contact: https://github.com/PuaBlue
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: en, es, ja
+Canonical: https://puasec.com/.well-known/security.txt
+Policy: https://github.com/PuaBlue

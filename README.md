@@ -72,17 +72,21 @@ Language preferences are automatically persisted in `localStorage` and synchroni
 
 ## 🛡️ Security Audit & Hardening Summary
 
-This portfolio has undergone a client-side security review:
-1. **Reverse Tabnabbing Protection**: All external links (`target="_blank"`) enforce `rel="noopener noreferrer"`.
-2. **DOM XSS Defense**: Dynamic JavaScript features only utilize safe DOM operations (`textContent`, `setAttribute`, CSS classes) and strictly avoid raw `eval()`.
-3. **Anti-Harvesting Defense**: Direct email is obscured from plaintext HTML to stop automated spambots.
-4. **Hardened HTTP Security Headers**: Included pre-configured deployment header profiles in `_headers` (Cloudflare Pages / Netlify) and `vercel.json` (Vercel) enforcing:
+This portfolio has undergone comprehensive static site security review and hardening:
+1. **Reverse Tabnabbing Protection**: All external links (`target="_blank"`) strictly enforce `rel="noopener noreferrer"`.
+2. **Strict Content Security Policy (CSP)**: `default-src 'self'` with zero `'unsafe-inline'` styles or scripts, zero `'unsafe-eval'`, and `object-src 'none'`.
+3. **DOM Injection & XSS Defense**: Dynamic JavaScript features utilize safe DOM APIs (`textContent`, `setAttribute`, CSS classes instead of inline style mutations) and frozen translation dictionaries to eliminate prototype tampering.
+4. **Email & Header Injection Mitigation**: Contact form inputs sanitize CRLF sequences (`\r`, `\n`) before `mailto:` link generation; personal email address is protected against automated crawler harvesting.
+5. **Cross-Origin Isolation**: Configured `Cross-Origin-Opener-Policy: same-origin` and `Cross-Origin-Resource-Policy: same-origin`.
+6. **RFC 9116 Compliant Vulnerability Disclosure**: Public security contact file published at `/.well-known/security.txt`.
+7. **Deployment Hardening**: `.vercelignore` blocks internal documentation, configuration, and repository metadata from public static web exposure.
+8. **Hardened HTTP Security Headers**: Pre-configured in `vercel.json` (Vercel) and `_headers` (Cloudflare Pages / Netlify) enforcing:
    - `Content-Security-Policy (CSP)`
    - `Strict-Transport-Security (HSTS)`
    - `X-Frame-Options: DENY` (Anti-Clickjacking)
    - `X-Content-Type-Options: nosniff` (Anti-MIME Sniffing)
    - `Referrer-Policy: strict-origin-when-cross-origin`
-   - `Permissions-Policy` (Disabling camera, microphone, geolocation)
+   - `Permissions-Policy` (Disabling camera, microphone, geolocation, payment, sensors)
 
 ---
 

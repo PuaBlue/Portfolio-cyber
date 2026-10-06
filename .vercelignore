@@ -1,0 +1,17 @@
+# Deployment exclusions for Vercel static site
+.git
+.gitignore
+.vercelignore
+_headers
+README.md
+*.md
+*.bak
+*.old
+*.backup
+*.zip
+*.tar.gz
+scratch/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

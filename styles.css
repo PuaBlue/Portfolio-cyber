@@ -1297,6 +1297,12 @@ html[data-theme='light'] .msft-learn-banner {
   box-shadow: 0 8px 24px var(--accent-glow);
 }
 
+.project-card.is-hidden {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
 .project-meta {
   display: flex;
   justify-content: space-between;

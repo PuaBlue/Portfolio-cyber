@@ -14,15 +14,41 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
+ * Safe LocalStorage Wrappers with Quota / Exception Handling
+ */
+function safeGetStorage(key) {
+  try {
+    return localStorage.getItem(key);
+  } catch (e) {
+    return null;
+  }
+}
+
+function safeSetStorage(key, value) {
+  try {
+    localStorage.setItem(key, value);
+  } catch (e) {
+    // Gracefully handle quota / storage blocked exceptions
+  }
+}
+
+/**
  * 1. Multilingual Support (English, Spanish, Japanese)
  */
+const VALID_LANGUAGES = Object.freeze(['en', 'es', 'ja']);
+const DEFAULT_LANG = 'en';
+
+function isValidLanguage(lang) {
+  return typeof lang === 'string' && VALID_LANGUAGES.includes(lang);
+}
+
 function initLanguage() {
   const langSelect = document.getElementById('languageSelect');
   // Auto-detect saved preference or browser language
-  let initialLang = localStorage.getItem('portfolio_lang');
+  let initialLang = safeGetStorage('portfolio_lang');
 
-  if (!initialLang) {
-    const browserLang = navigator.language || navigator.userLanguage || 'en';
+  if (!isValidLanguage(initialLang)) {
+    const browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
     if (browserLang.startsWith('es')) initialLang = 'es';
     else if (browserLang.startsWith('ja')) initialLang = 'ja';
     else initialLang = 'en';
@@ -34,21 +60,26 @@ function initLanguage() {
 
     langSelect.addEventListener('change', (e) => {
       const chosenLang = e.target.value;
-      localStorage.setItem('portfolio_lang', chosenLang);
-      applyLanguage(chosenLang);
+      if (isValidLanguage(chosenLang)) {
+        safeSetStorage('portfolio_lang', chosenLang);
+        applyLanguage(chosenLang);
+      }
     });
   }
 }
 
 function applyLanguage(lang) {
-  if (typeof translations === 'undefined' || !translations[lang]) return;
+  if (!isValidLanguage(lang)) {
+    lang = DEFAULT_LANG;
+  }
+  if (typeof translations === 'undefined' || !translations || !Object.prototype.hasOwnProperty.call(translations, lang)) return;
 
   document.documentElement.setAttribute('lang', lang);
 
   // Update text and inner HTML for elements with data-i18n
   document.querySelectorAll('[data-i18n]').forEach((el) => {
     const key = el.getAttribute('data-i18n');
-    if (translations[lang][key] !== undefined) {
+    if (key && Object.prototype.hasOwnProperty.call(translations[lang], key)) {
       el.innerHTML = translations[lang][key];
     }
   });
@@ -56,7 +87,7 @@ function applyLanguage(lang) {
   // Update input placeholders
   document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
     const key = el.getAttribute('data-i18n-placeholder');
-    if (translations[lang][key] !== undefined) {
+    if (key && Object.prototype.hasOwnProperty.call(translations[lang], key)) {
       el.placeholder = translations[lang][key];
     }
   });
@@ -65,15 +96,23 @@ function applyLanguage(lang) {
 /**
  * 2. Theme Management (Light / Dark)
  */
+const VALID_THEMES = Object.freeze(['light', 'dark']);
+const DEFAULT_THEME = 'dark';
+
 function initTheme() {
   const themeToggle = document.getElementById('themeToggle');
   const html = document.documentElement;
   
   // Check localStorage or system preference
-  const savedTheme = localStorage.getItem('theme');
-  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  
-  const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+  const savedTheme = safeGetStorage('theme');
+  let initialTheme = DEFAULT_THEME;
+
+  if (VALID_THEMES.includes(savedTheme)) {
+    initialTheme = savedTheme;
+  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+    initialTheme = 'light';
+  }
+
   html.setAttribute('data-theme', initialTheme);
 
   if (themeToggle) {
@@ -82,7 +121,7 @@ function initTheme() {
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
       
       html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
+      safeSetStorage('theme', newTheme);
     });
   }
 }
@@ -114,11 +153,9 @@ function initProjectFilters() {
       projectCards.forEach(card => {
         const category = card.getAttribute('data-category');
         if (filterValue === 'all' || category === filterValue) {
-          card.style.display = 'flex';
-          card.style.opacity = '1';
+          card.classList.remove('is-hidden');
         } else {
-          card.style.display = 'none';
-          card.style.opacity = '0';
+          card.classList.add('is-hidden');
         }
       });
     });
@@ -203,16 +240,15 @@ function initContactForm() {
   if (!form) return;
 
   // Obfuscated recipient to prevent automated bot scrapers from harvesting plaintext in HTML
-  // Base64 decodes to: angelschafer2002@gmail.com
   const getRecipient = () => atob('YW5nZWxzY2hhZmVyMjAwMkBnbWFpbC5jb20=');
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const name = document.getElementById('senderName')?.value.trim();
-    const email = document.getElementById('senderEmail')?.value.trim();
-    const subject = document.getElementById('messageSubject')?.value.trim();
-    const message = document.getElementById('messageBody')?.value.trim();
+    const name = (document.getElementById('senderName')?.value || '').trim();
+    const email = (document.getElementById('senderEmail')?.value || '').trim();
+    const subject = (document.getElementById('messageSubject')?.value || '').trim();
+    const message = (document.getElementById('messageBody')?.value || '').trim();
 
     if (!name || !email || !message) {
       showFeedback('Please fill out all required fields before sending.', 'error');
@@ -226,18 +262,30 @@ function initContactForm() {
       return;
     }
 
+    // Sanitize CRLF from single-line headers to prevent email header injection
+    const cleanName = name.replace(/[\r\n]+/g, ' ');
+    const cleanEmail = email.replace(/[\r\n]+/g, ' ');
+    const cleanSubject = subject.replace(/[\r\n]+/g, ' ');
+
     // Prepare message payload
     const recipient = getRecipient();
-    const formattedSubject = `[Portfolio Contact] ${subject} - from ${name}`;
-    const formattedBody = `Name: ${name}\nEmail: ${email}\nPurpose: ${subject}\n\nMessage:\n${message}\n\n---\nSent from puasec portfolio`;
+    const formattedSubject = `[Portfolio Contact] ${cleanSubject} - from ${cleanName}`;
+    const formattedBody = `Name: ${cleanName}\nEmail: ${cleanEmail}\nPurpose: ${cleanSubject}\n\nMessage:\n${message}\n\n---\nSent from puasec portfolio`;
 
     // Construct URI encoded mailto link
     const mailtoUri = `mailto:${recipient}?subject=${encodeURIComponent(formattedSubject)}&body=${encodeURIComponent(formattedBody)}`;
 
-    // Visual feedback
+    // Verify safe mailto scheme
+    if (!mailtoUri.startsWith('mailto:')) {
+      showFeedback('Invalid dispatch scheme detected.', 'error');
+      return;
+    }
+
+    // Visual feedback without destroying inner SVG markup
     submitBtn.disabled = true;
     submitBtn.classList.add('loading');
-    submitBtn.innerHTML = '<span>Opening Mail Client...</span>';
+    const btnSpan = submitBtn.querySelector('span');
+    if (btnSpan) btnSpan.textContent = 'Opening Mail Client...';
 
     // Attempt to copy content to clipboard as a helpful fallback for webmail users (Gmail/Outlook web)
     if (navigator.clipboard) {
@@ -255,13 +303,10 @@ function initContactForm() {
 
       submitBtn.disabled = false;
       submitBtn.classList.remove('loading');
-      submitBtn.innerHTML = `
-        <span>Send Message</span>
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="22" y1="2" x2="11" y2="13"></line>
-          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-        </svg>
-      `;
+      if (btnSpan) {
+        const currentLang = document.documentElement.getAttribute('lang') || 'en';
+        btnSpan.textContent = (typeof translations !== 'undefined' && translations[currentLang]?.form_btn_send) || 'Send Message';
+      }
 
       form.reset();
     }, 600);

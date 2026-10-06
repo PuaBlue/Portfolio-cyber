@@ -573,3 +573,11 @@ const translations = {
     footer_top: "トップに戻る &uarr;"
   }
 };
+
+// Security hardening: Freeze dictionary to prevent runtime tampering or prototype pollution
+Object.freeze(translations);
+Object.keys(translations).forEach((lang) => {
+  if (Object.prototype.hasOwnProperty.call(translations, lang)) {
+    Object.freeze(translations[lang]);
+  }
+});
