@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paula Villegas | Cybersecurity Analyst &amp; DFIR Specialist</title>
+  <meta name="description" content="Portfolio and cybersecurity career trajectory of Paula Villegas — SOC Analyst, DFIR enthusiast, Ekoparty speaker, and mentor.">
+  <meta name="theme-color" content="#0d0a1a">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Paula Villegas | Cybersecurity Analyst">
+  <meta property="og:description" content="Specialized SOC Analyst with 3.5+ years of experience in incident response, threat monitoring, DFIR, and community mentorship.">
+  <meta property="og:type" content="website">
+
+  <!-- Security: Referrer Policy -->
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <!-- Typography: Inter for clean UI & JetBrains Mono for Technical accents -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-container">
+    <!-- Top Navigation Bar -->
+    <header class="site-header">
+      <div class="nav-wrapper">
+        <div class="nav-left">
+          <!-- Stylized Language Selector in Top Left -->
+          <div class="lang-selector-wrapper" title="Change Language">
+            <div class="lang-pill">
+              <svg class="globe-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
+              <select id="languageSelect" class="lang-select-input" aria-label="Select Language">
+                <option value="en">EN &bull; English</option>
+                <option value="es">ES &bull; Español</option>
+                <option value="ja">JA &bull; 日本語</option>
+              </select>
+              <svg class="dropdown-chevron" viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <div class="nav-vertical-divider" aria-hidden="true"></div>
+
+          <!-- Brand Logo -->
+          <a href="#hero" class="brand-logo" aria-label="Home">
+            <span class="terminal-symbol">&gt;_</span>
+            <span class="brand-text">pua<span class="accent-dot">.</span>sec</span>
+          </a>
+        </div>
+
+        <nav class="nav-links" id="navLinks">
+          <a href="#about" class="nav-item" data-i18n="nav_about">About Me</a>
+          <a href="#projects" class="nav-item" data-i18n="nav_projects">Projects</a>
+          <a href="#community" class="nav-item" data-i18n="nav_community">Community</a>
+          <a href="#contact" class="nav-item" data-i18n="nav_contact">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button id="themeToggle" class="icon-btn" aria-label="Toggle light or dark theme" title="Toggle Theme">
+            <svg class="theme-icon sun-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="theme-icon moon-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+          <a href="#contact" class="btn btn-sm btn-primary" data-i18n="nav_connect">Connect</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="mainContent">
+      <!-- Hero / Introduction -->
+      <section id="hero" class="hero-section">
+        <div class="hero-status">
+          <span class="status-pulse"></span>
+          <span class="status-text" data-i18n="hero_status">Buenos Aires, Argentina &bull; Active in Cyber Defense &amp; DFIR</span>
+        </div>
+
+        <div class="hero-main-row">
+          <div class="hero-text-content">
+            <h1 class="hero-title" data-i18n="hero_name">
+              Paula <span class="highlight-text">Villegas</span>
+            </h1>
+            <p class="hero-subtitle" data-i18n="hero_role">
+              <span>Cybersecurity Analyst</span>
+              <span>&bull;</span>
+              <span>SOC &amp; Incident Response</span>
+              <span>&bull;</span>
+              <span>DFIR Enthusiast</span>
+            </p>
+            <p class="hero-lead" data-i18n="hero_lead">
+              Over 3.5 years of specialized experience in Security Operations Centers (SOC) collaborating with international teams in 24/7 monitoring, phishing triage, and incident response. Driven by a passion for Digital Forensics and Incident Response (DFIR), Human-AI defense collaboration, and community mentorship.
+            </p>
+          </div>
+
+          <!-- Interactive ASCII Eye Cursor Tracker -->
+          <div class="hero-ascii-eye-wrapper" aria-hidden="true">
+            <div class="ascii-eye-card">
+              <div class="ascii-eye-header">
+                <span class="ascii-eye-dot"></span>
+                <span class="ascii-eye-label">DEFENSE.EYE // ACTIVE</span>
+              </div>
+              <pre id="asciiEye" class="ascii-eye-canvas"></pre>
+              <div class="ascii-eye-footer">
+                <span class="ascii-eye-mode">TARGET TRACKING</span>
+                <span id="asciiEyeCoords" class="ascii-eye-coords">X: +0.00 &bull; Y: +0.00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-ctas">
+          <a href="#about" class="btn btn-primary" data-i18n="hero_cta_about">View Career Trajectory</a>
+          <a href="#projects" class="btn btn-secondary" data-i18n="hero_cta_projects">Technical Projects</a>
+          <a href="#community" class="btn btn-secondary" data-i18n="hero_cta_community">Community &amp; Talks</a>
+          <a href="https://github.com/PuaBlue" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            <span data-i18n="hero_cta_github">GitHub @PuaBlue</span>
+          </a>
+          <a href="https://www.linkedin.com/in/puasec/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+            <span data-i18n="hero_cta_linkedin">LinkedIn Profile</span>
+          </a>
+          <a href="https://www.instagram.com/pua.blue/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            <span data-i18n="hero_cta_ig">Instagram @pua.blue</span>
+          </a>
+        </div>
+
+        <!-- Metric / Security Highlights Bar -->
+        <div class="hero-stats">
+          <div class="stat-card">
+            <div class="stat-value">3.5+</div>
+            <div class="stat-label" data-i18n="stat_soc_lbl">Years of SOC Experience</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">BTL1 &bull; Cortex XDR</div>
+            <div class="stat-label" data-i18n="stat_cert_lbl">Verified Certifications</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">Ekoparty 2025</div>
+            <div class="stat-label" data-i18n="stat_speaker_lbl">Featured Conference Speaker</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">GPA 3.7</div>
+            <div class="stat-label" data-i18n="stat_edu_lbl">Computer Engineering (UNAJ)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 1: ABOUT ME -->
+      <section id="about" class="section-block">
+        <div class="section-header">
+          <div class="section-badge" data-i18n="sec1_badge">SECTION 01</div>
+          <h2 class="section-title" data-i18n="sec1_title">About Me</h2>
+          <p class="section-desc" data-i18n="sec1_desc">
+            My professional journey across high-tempo SOC environments, engineering education, technical skillset, and defensive certifications.
+          </p>
+        </div>
+
+        <!-- 1.1 Professional Narrative & Core Domains -->
+        <div class="about-grid">
+          <div class="card bio-card">
+            <h3 class="card-title" data-i18n="about_summary_title">Professional Summary</h3>
+            <p data-i18n="about_summary_p1">
+              I am a Cybersecurity Analyst with three and a half years of specialized experience in SOC environments, collaborating alongside multinational teams to deliver robust threat monitoring, alert triage, and incident response. 
+            </p>
+            <p data-i18n="about_summary_p2">
+              My technical focus is propelled by a deep interest in <strong>Digital Forensics and Incident Response (DFIR)</strong> and the emerging synergy between AI agents and human analysts to accelerate triage without sacrificing forensic integrity.
+            </p>
+            <p data-i18n="about_summary_p3">
+              Deeply committed to continuous learning, I actively contribute to cybersecurity communities, lead mentoring initiatives for women in cyber defense, and speak at conferences to share knowledge and foster resilient digital ecosystems.
+            </p>
+
+            <div class="academic-badge-row">
+              <div class="academic-badge">
+                <span class="badge-icon">🎓</span>
+                <div>
+                  <strong data-i18n="academic_degree_title">Computer Engineering Degree</strong>
+                  <div class="cred-meta" data-i18n="academic_degree_meta">Universidad Nacional Arturo Jauretche (2021 — Present)</div>
+                  <div class="cred-status" data-i18n="academic_degree_gpa">GPA 3.7 &bull; 18 subjects passed</div>
+                </div>
+              </div>
+              <div class="academic-badge">
+                <span class="badge-icon">💻</span>
+                <div>
+                  <strong data-i18n="academic_prog_title">Programmer Analyst Intermediate Degree</strong>
+                  <div class="cred-meta" data-i18n="academic_prog_meta">Strong foundations in algorithms, databases, and multi-language development</div>
+                  <div class="cred-status" data-i18n="academic_prog_status">Nearing completion</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="philosophy-box">
+              <div class="philosophy-title" data-i18n="philosophy_title">Security &amp; Growth Mindset:</div>
+              <blockquote class="philosophy-quote" data-i18n="philosophy_quote">
+                "Effective defense requires proactive curiosity, relentless attention to anomalous signals, and empowering the community through shared knowledge."
+              </blockquote>
+            </div>
+
+            <!-- Language Proficiency -->
+            <div class="lang-chips">
+              <span class="lang-chip" data-i18n="lang_es">🇪🇸 Spanish: Native</span>
+              <span class="lang-chip" data-i18n="lang_en">🇬🇧 English: Advanced (B2)</span>
+              <span class="lang-chip" data-i18n="lang_ja">🇯🇵 Japanese: Basic (JLPT N5)</span>
+            </div>
+          </div>
+
+          <!-- Technical Skills Breakdown -->
+          <div class="card domains-card">
+            <h3 class="card-title" data-i18n="comp_title">Technical Competencies</h3>
+            <ul class="domain-list">
+              <li>
+                <div class="domain-header">
+                  <span class="domain-tag">SIEM / SOAR</span>
+                  <strong data-i18n="comp_siem_title">Monitoring &amp; Orchestration</strong>
+                </div>
+                <p data-i18n="comp_siem_desc">Splunk SIEM, Splunk SOAR, Cortex, OSSIM, FortiSIEM. Alert correlation, triage pipelines, and case lifecycle management.</p>
+              </li>
+              <li>
+                <div class="domain-header">
+                  <span class="domain-tag">XDR &amp; EDR</span>
+                  <strong data-i18n="comp_xdr_title">Endpoint &amp; Extended Detection</strong>
+                </div>
+                <p data-i18n="comp_xdr_desc">Palo Alto Cortex XDR, Microsoft Defender, Trend Micro. Process inspection, containment, and endpoint telemetry.</p>
+              </li>
+              <li>
+                <div class="domain-header">
+                  <span class="domain-tag">DFIR &amp; OSINT</span>
+                  <strong data-i18n="comp_dfir_title">Investigation &amp; Reconnaissance</strong>
+                </div>
+                <p data-i18n="comp_dfir_desc">Nessus vulnerability assessments, Maltego graph analysis, open-source intelligence (OSINT), and network traffic analysis.</p>
+              </li>
+              <li>
+                <div class="domain-header">
+                  <span class="domain-tag">DEV &amp; DATA</span>
+                  <strong data-i18n="comp_dev_title">Databases &amp; Programming</strong>
+                </div>
+                <p data-i18n="comp_dev_desc">SQL, NoSQL, Python (basic scripting &amp; automation), Java, C#, JavaScript. Foundations in software development lifecycle.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 1.2 Career Trajectory Timeline -->
+        <div class="timeline-container">
+          <h3 class="subsection-title" data-i18n="timeline_title">Career Trajectory Timeline</h3>
+          <p class="subsection-desc" data-i18n="timeline_desc">A chronological progression of operational experience, responsibilities, and team impact.</p>
+
+          <div class="timeline">
+            <!-- Timeline Item 1: CYBER42 -->
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <div>
+                    <h4 class="timeline-role" data-i18n="t1_role">Cybersecurity Analyst</h4>
+                    <span class="timeline-company">CYBER42</span>
+                  </div>
+                  <span class="timeline-date" data-i18n="t1_date">October 2025 — Present</span>
+                </div>
+                <ul class="timeline-bullets">
+                  <li data-i18n="t1_b1">Monitor security events and execute structured incident response procedures leveraging Human-AI collaboration.</li>
+                  <li data-i18n="t1_b2">Manage enterprise ticketing systems for comprehensive, auditable case tracking and root-cause documentation.</li>
+                  <li data-i18n="t1_b3">Collaborate actively with global engineering and defense teams on complex case investigations and active phishing analysis.</li>
+                  <li data-i18n="t1_b4">Utilize enterprise detection tools including Microsoft Defender, Cortex XDR, and Trend Micro.</li>
+                </ul>
+                <div class="tech-pills">
+                  <span class="pill">Human-AI Collaboration</span>
+                  <span class="pill">Cortex XDR</span>
+                  <span class="pill">Microsoft Defender</span>
+                  <span class="pill">Trend Micro</span>
+                  <span class="pill">Phishing Analysis</span>
+                  <span class="pill">Incident Response</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Timeline Item 2: Accenture -->
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <div>
+                    <h4 class="timeline-role" data-i18n="t2_role">Security Delivery Associate</h4>
+                    <span class="timeline-company" data-i18n="t2_company">Accenture AR &bull; Global Operations</span>
+                  </div>
+                  <span class="timeline-date" data-i18n="t2_date">January 2024 — October 2025</span>
+                </div>
+                <ul class="timeline-bullets">
+                  <li data-i18n="t2_b1">Monitored, triaged, and prioritized high-volume security alerts utilizing Splunk SIEM and Splunk SOAR.</li>
+                  <li data-i18n="t2_b2">Maintained incident management systems to ensure swift ticket escalation and strict SLA adherence.</li>
+                  <li data-i18n="t2_b3">Applied actionable threat intelligence and newly released vulnerability reports directly into internal monitoring playbooks.</li>
+                  <li data-i18n="t2_b4">Collaborated closely with global L2 analysts for in-depth forensics, investigations, and incident resolution.</li>
+                  <li data-i18n="t2_b5">Facilitated onboarding, technical training, and mentoring support for new incoming team members.</li>
+                </ul>
+                <div class="tech-pills">
+                  <span class="pill">Splunk SIEM</span>
+                  <span class="pill">Splunk SOAR</span>
+                  <span class="pill">Threat Intelligence</span>
+                  <span class="pill">L2 Collaboration</span>
+                  <span class="pill">Playbook Optimization</span>
+                  <span class="pill">Team Mentorship</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Timeline Item 3: CSIRT Ministry of Security -->
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <div>
+                    <h4 class="timeline-role" data-i18n="t3_role">Cybersecurity Analyst (CSIRT)</h4>
+                    <span class="timeline-company" data-i18n="t3_company">Ministry of Security of Argentine Nation</span>
+                  </div>
+                  <span class="timeline-date" data-i18n="t3_date">June 2023 — January 2024</span>
+                </div>
+                <ul class="timeline-bullets">
+                  <li data-i18n="t3_b1">Monitored and investigated critical security incidents leveraging OSSIM and FortiSIEM platforms.</li>
+                  <li data-i18n="t3_b2">Conducted systematic vulnerability assessments utilizing Nessus and OSINT reconnaissance techniques.</li>
+                  <li data-i18n="t3_b3">Executed front-line incident response, event triage, and authored detailed technical briefing reports on findings.</li>
+                </ul>
+                <div class="tech-pills">
+                  <span class="pill">OSSIM</span>
+                  <span class="pill">FortiSIEM</span>
+                  <span class="pill">Nessus</span>
+                  <span class="pill">OSINT</span>
+                  <span class="pill">CSIRT Response</span>
+                  <span class="pill">Government Defense</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 1.3 Education & Certifications -->
+        <div class="credentials-block">
+          <h3 class="subsection-title" data-i18n="cert_title">Education &amp; Professional Certifications</h3>
+          <div class="credentials-grid">
+            <div class="credential-card">
+              <div class="credential-badge">BTL1</div>
+              <div class="credential-info">
+                <h4>Blue Team Level 1</h4>
+                <p class="cred-meta">Security Blue Team</p>
+                <span class="cred-status">August 2025 &bull; Verified</span>
+              </div>
+            </div>
+
+            <div class="credential-card">
+              <div class="credential-badge">CORTEX</div>
+              <div class="credential-info">
+                <h4>Cortex XDR: Features</h4>
+                <p class="cred-meta">Palo Alto Networks</p>
+                <span class="cred-status">October 2025 &bull; Verified</span>
+              </div>
+            </div>
+
+            <div class="credential-card">
+              <div class="credential-badge">AND</div>
+              <div class="credential-info">
+                <h4>Investigation Theory</h4>
+                <p class="cred-meta">Applied Network Defense</p>
+                <span class="cred-status">September 2024 &bull; Verified</span>
+              </div>
+            </div>
+
+            <div class="credential-card">
+              <div class="credential-badge">CISCO</div>
+              <div class="credential-info">
+                <h4>Networking Basics</h4>
+                <p class="cred-meta">Cisco Networking Academy</p>
+                <span class="cred-status">January 2025 &bull; Verified</span>
+              </div>
+            </div>
+
+            <div class="credential-card">
+              <div class="credential-badge">FORTINET</div>
+              <div class="credential-info">
+                <h4>FCF &amp; FCA Certifications</h4>
+                <p class="cred-meta">Fortinet Training Institute</p>
+                <span class="cred-status">November 2023 &bull; Verified</span>
+              </div>
+            </div>
+
+            <div class="credential-card">
+              <div class="credential-badge">UNAJ</div>
+              <div class="credential-info">
+                <h4 data-i18n="academic_degree_title">Computer Engineering (Degree)</h4>
+                <p class="cred-meta">Univ. Nac. Arturo Jauretche</p>
+                <span class="cred-status">GPA 3.7 &bull; 2021 — Present</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Microsoft Learn Featured Banner -->
+          <div class="msft-learn-banner">
+            <div class="msft-banner-content">
+              <div class="msft-banner-icon">
+                <svg viewBox="0 0 23 23" width="28" height="28" aria-hidden="true">
+                  <path fill="#f25022" d="M1 1h10v10H1z"/>
+                  <path fill="#00a4ef" d="M1 12h10v10H1z"/>
+                  <path fill="#7fba00" d="M12 1h10v10H12z"/>
+                  <path fill="#ffb900" d="M12 12h10v10H12z"/>
+                </svg>
+              </div>
+              <div class="msft-banner-text">
+                <h3 data-i18n="msft_banner_title">Microsoft Learn &bull; Badges &amp; Achievements</h3>
+                <p data-i18n="msft_banner_desc">Continuous technical skilling in cybersecurity operations, threat protection, and Microsoft Defender / Azure architectures.</p>
+              </div>
+            </div>
+            <a href="https://learn.microsoft.com/es-es/users/paulavillegas-3482/achievements#badges-section" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n="msft_banner_btn">
+              <span>View Microsoft Badges</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: TECHNICAL PROJECTS -->
+      <section id="projects" class="section-block">
+        <div class="section-header">
+          <div class="section-badge" data-i18n="sec2_badge">SECTION 02</div>
+          <h2 class="section-title" data-i18n="sec2_title">Technical Projects</h2>
+          <p class="section-desc" data-i18n="sec2_desc">
+            Defensive engineering implementations, incident response tooling, detection correlation, and programming foundations.
+          </p>
+        </div>
+
+        <!-- Public GitHub Featured Banner -->
+        <div class="github-featured-banner">
+          <div class="github-banner-content">
+            <div class="github-banner-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </div>
+            <div class="github-banner-text">
+              <h3 data-i18n="github_banner_title">Public Repositories on GitHub</h3>
+              <p data-i18n="github_banner_desc">Explore my open-source security tools, detection logic, and development projects directly on GitHub.</p>
+            </div>
+          </div>
+          <a href="https://github.com/PuaBlue" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n="github_banner_btn">
+            <span>View GitHub @PuaBlue</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Item 1: Human-AI Incident Response Workflows -->
+          <article class="project-card">
+            <div class="project-meta">
+              <span class="project-category" data-i18n="p5_cat">Technical Research</span>
+              <span class="project-status">CYBER42 &bull; Active</span>
+            </div>
+            <h3 class="project-title" data-i18n="p5_title">Human-AI Collaboration in SOC Incident Response</h3>
+            <p class="project-description" data-i18n="p5_desc">
+              Implementing and evaluating AI-assisted workflows in live SOC environments to automate first-pass phishing categorization, IOC extraction, and log aggregation while keeping seasoned analysts in the loop for nuanced forensic validation.
+            </p>
+            <div class="project-highlights">
+              <span>Accelerated Triage</span>
+              <span>&bull; Forensic Integrity Maintained</span>
+            </div>
+            <div class="tech-pills">
+              <span class="pill">AI Agents</span>
+              <span class="pill">Cortex XDR</span>
+              <span class="pill">Phishing Automation</span>
+              <span class="pill">Human-in-the-Loop</span>
+            </div>
+            <div class="project-links">
+              <a href="#about" class="link-item">
+                <span data-i18n="p5_link">View Experience</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <a href="https://github.com/PuaBlue" target="_blank" rel="noopener noreferrer" class="link-item">
+                <span>GitHub Repos</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Item 2: SIEM & Threat Intelligence Correlation -->
+          <article class="project-card">
+            <div class="project-meta">
+              <span class="project-category" data-i18n="p6_cat">Defense Engineering</span>
+              <span class="project-status">Accenture AR &bull; CSIRT</span>
+            </div>
+            <h3 class="project-title" data-i18n="p6_title">Multi-Platform SIEM Alert Correlation &amp; Threat Intel</h3>
+            <p class="project-description" data-i18n="p6_desc">
+              Operational expertise across Splunk, OSSIM, and FortiSIEM integrating real-time vulnerability advisories and threat intelligence feeds into detection rules, false-positive reduction routines, and enterprise escalation paths.
+            </p>
+            <div class="project-highlights">
+              <span>Splunk &bull; FortiSIEM &bull; OSSIM</span>
+              <span>&bull; Threat Intel Ingestion</span>
+            </div>
+            <div class="tech-pills">
+              <span class="pill">Splunk SIEM</span>
+              <span class="pill">Splunk SOAR</span>
+              <span class="pill">FortiSIEM</span>
+              <span class="pill">Threat Intel</span>
+            </div>
+            <div class="project-links">
+              <a href="#about" class="link-item">
+                <span data-i18n="p6_link">View Timeline</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <a href="https://github.com/PuaBlue" target="_blank" rel="noopener noreferrer" class="link-item">
+                <span>GitHub Repos</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Item 3: Software Engineering & Automation Labs -->
+          <article class="project-card">
+            <div class="project-meta">
+              <span class="project-category" data-i18n="p7_cat">Software &amp; Scripting</span>
+              <span class="project-status">UNAJ &bull; Programmer Analyst</span>
+            </div>
+            <h3 class="project-title" data-i18n="p7_title">Programmer Analyst Foundations &amp; Automation</h3>
+            <p class="project-description" data-i18n="p7_desc">
+              Developing automation tools and investigative scripts leveraging Python, Java, C#, and SQL/NoSQL databases. Bridging the gap between software engineering architecture and defensive security controls.
+            </p>
+            <div class="project-highlights">
+              <span>UNAJ Computer Engineering</span>
+              <span>&bull; Full SDLC &amp; Algorithms</span>
+            </div>
+            <div class="tech-pills">
+              <span class="pill">Python</span>
+              <span class="pill">Java</span>
+              <span class="pill">C#</span>
+              <span class="pill">SQL / NoSQL</span>
+              <span class="pill">JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/PuaBlue" target="_blank" rel="noopener noreferrer" class="link-item">
+                <span data-i18n="p7_link">Explore Repositories</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- SECTION 3: COMMUNITY & INITIATIVES -->
+      <section id="community" class="section-block">
+        <div class="section-header">
+          <div class="section-badge" data-i18n="sec3_badge">SECTION 03</div>
+          <h2 class="section-title" data-i18n="sec3_title">Community &amp; Initiatives</h2>
+          <p class="section-desc" data-i18n="sec3_desc">
+            Conference keynote speaking, mentorship for women in cybersecurity, educational content creation, and community leadership.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Item 1: Ekoparty 2025 Speaker -->
+          <article class="project-card ekoparty-card">
+            <div class="project-image-wrapper">
+              <img src="assets/images/ekoparty-2025.jpg" alt="Paula Angeles Villegas speaking at Ekoparty 2025" class="project-card-image" loading="lazy">
+              <div class="image-overlay-badge">Ekoparty 2025</div>
+            </div>
+            <div class="project-meta">
+              <span class="project-category" data-i18n="p1_cat">Conference Speaker</span>
+              <span class="project-status">Ekoparty 2025</span>
+            </div>
+            <h3 class="project-title" data-i18n="p1_title">"Press Play: Level One of the Professional World"</h3>
+            <p class="project-description" data-i18n="p1_desc">
+              Delivered a featured conference talk at Ekoparty 2025 focusing on career onboarding in cybersecurity, breaking into blue teaming, navigating technical growth curves, and turning entry-level SOC roles into long-term defensive trajectories.
+            </p>
+            <div class="project-highlights">
+              <span data-i18n="p1_stat">★ Ekoparty 2025 Speaker</span>
+              <span data-i18n="p1_sub">&bull; Career Navigation &amp; Blue Team Entry</span>
+            </div>
+            <div class="tech-pills">
+              <span class="pill">Public Speaking</span>
+              <span class="pill">Conference Talk</span>
+              <span class="pill">Career Onboarding</span>
+              <span class="pill">Ekoparty</span>
+            </div>
+            <div class="project-links">
+              <a href="https://www.linkedin.com/feed/update/urn:li:activity:7388341030212845568/" target="_blank" rel="noopener noreferrer" class="link-item">
+                <span data-i18n="p1_link">View LinkedIn Talk Summary</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Item 2: Bug Bounty Girls Club & Women Hacks Panel -->
+          <article class="project-card">
+            <div class="project-meta">
+              <span class="project-category" data-i18n="p2_cat">Mentorship &amp; Community</span>
+              <span class="project-status">Active Volunteer</span>
+            </div>
+            <h3 class="project-title" data-i18n="p2_title">Bug Bounty Girls Club &amp; Women Hacks Panel</h3>
+            <p class="project-description" data-i18n="p2_desc">
+              Active volunteer at Bug Bounty Girls Club, co-creating technical content and mentoring women in Cyber Defense through the BlueOps Girls initiative. Selected to participate in the prestigious <strong>Women Hacks panel at Ekoparty 2026</strong> representing the club to foster diversity in threat analysis and defensive engineering.
+            </p>
+            <div class="project-highlights">
+              <span data-i18n="p2_stat">★ Women Hacks Panel @ Ekoparty 2026</span>
+              <span data-i18n="p2_sub">&bull; BlueOps Girls Mentor</span>
+            </div>
+            <div class="tech-pills">
+              <span class="pill">Bug Bounty Girls</span>
+              <span class="pill">Women Hacks Panel</span>
+              <span class="pill">Ekoparty 2026</span>
+              <span class="pill">BlueOps Girls</span>
+              <span class="pill">Cyber Defense</span>
+              <span class="pill">Mentorship</span>
+            </div>
+            <div class="project-links">
+              <a href="https://bugbountygirlsclub.com" target="_blank" rel="noopener noreferrer" class="link-item">
+                <span data-i18n="p2_link_site">Official Website</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <a href="https://lnkd.in/p/dBmYWEFE" target="_blank" rel="noopener noreferrer" class="link-item">
+                <span data-i18n="p2_link_post">View Presentation Post</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Item 3: SteamGirls Community -->
+          <article class="project-card steamgirls-card">
+            <div class="project-image-wrapper">
+              <img src="assets/images/steamgirls.jpg" alt="Paula Villegas with SteamGirls community at Google" class="project-card-image" loading="lazy">
+              <div class="image-overlay-badge">SteamGirls</div>
+            </div>
+            <div class="project-meta">
+              <span class="project-category" data-i18n="p3_cat">Community &amp; Diversity</span>
+              <span class="project-status">SteamGirls Community</span>
+            </div>
+            <h3 class="project-title" data-i18n="p3_title">SteamGirls Community &amp; Cyber Empowerment</h3>
+            <p class="project-description" data-i18n="p3_desc">
+              Active participant in the SteamGirls community, contributing to initiatives that empower women across STEAM disciplines and cybersecurity. Collaborating on networking, technical sessions, and community events at Ekoparty to support upcoming talent.
+            </p>
+            <div class="project-highlights">
+              <span data-i18n="p3_stat">★ SteamGirls Member</span>
+              <span data-i18n="p3_sub">&bull; STEAM &amp; Cyber Empowerment</span>
+            </div>
+            <div class="tech-pills">
+              <span class="pill">SteamGirls</span>
+              <span class="pill">Women in STEAM</span>
+              <span class="pill">Ekoparty</span>
+              <span class="pill">Diversity in Tech</span>
+              <span class="pill">Networking</span>
+            </div>
+            <div class="project-links">
+              <a href="https://www.linkedin.com/posts/steam-girls_steamgirs-ekoparty-ciberseguridad-activity-7512514166461603840-HRvJ?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADTnCesBZ3woyqNZpo2OZoYNKh3xgOTPno8" target="_blank" rel="noopener noreferrer" class="link-item">
+                <span data-i18n="p3_link">View SteamGirls Post</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Item 4: Cybersecurity Content Creation @pua.blue -->
+          <article class="project-card">
+            <div class="project-meta">
+              <span class="project-category" data-i18n="p4_cat">Content Creation &amp; Education</span>
+              <span class="project-status">Instagram @pua.blue</span>
+            </div>
+            <h3 class="project-title" data-i18n="p4_title">@pua.blue &bull; Cybersecurity Content &amp; Blue Teaming</h3>
+            <p class="project-description" data-i18n="p4_desc">
+              Creator of @pua.blue, an educational cybersecurity initiative on Instagram sharing insights on Blue Teaming, SOC operations, DFIR fundamentals, threat hunting, and encouraging women and newcomers to thrive in cyber defense.
+            </p>
+            <div class="project-highlights">
+              <span data-i18n="p4_stat">★ Educational Infosec Channel</span>
+              <span data-i18n="p4_sub">&bull; Community Growth &amp; Defense Tips</span>
+            </div>
+            <div class="tech-pills">
+              <span class="pill">Cyber Education</span>
+              <span class="pill">Blue Teaming</span>
+              <span class="pill">DFIR Concepts</span>
+              <span class="pill">Community Outreach</span>
+              <span class="pill">Instagram</span>
+            </div>
+            <div class="project-links">
+              <a href="https://www.instagram.com/pua.blue/" target="_blank" rel="noopener noreferrer" class="link-item">
+                <span data-i18n="p4_link">Follow @pua.blue on Instagram</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- SECTION 4: CONTACT & COMMUNICATIONS -->
+      <section id="contact" class="section-block contact-section">
+        <div class="section-header">
+          <div class="section-badge" data-i18n="sec_contact_badge">COMMUNICATIONS</div>
+          <h2 class="section-title" data-i18n="sec_contact_title">Get in Touch</h2>
+          <p class="section-desc" data-i18n="sec_contact_desc">
+            Interested in discussing SOC/DFIR opportunities, speaking invitations, or community mentorship? Send a message directly to my inbox below.
+          </p>
+        </div>
+
+        <div class="contact-layout">
+          <!-- Interactive Contact Form -->
+          <div class="contact-form-card">
+            <h3 class="card-title" data-i18n="contact_form_title">Send a Direct Message</h3>
+            <p class="form-instruction" data-i18n="contact_form_inst">
+              Your email address is only used to reply to your inquiry. Messages are delivered straight to my personal inbox.
+            </p>
+
+            <form id="contactForm" class="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="senderName" class="form-label">
+                    <span data-i18n="form_lbl_name">Your Name / Organization</span> <span class="required-star">*</span>
+                  </label>
+                  <input type="text" id="senderName" name="name" class="form-control" placeholder="e.g. Alex Smith" required>
+                </div>
+                <div class="form-group">
+                  <label for="senderEmail" class="form-label">
+                    <span data-i18n="form_lbl_email">Your Email</span> <span class="required-star">*</span>
+                  </label>
+                  <input type="email" id="senderEmail" name="email" class="form-control" placeholder="e.g. alex@example.com" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="messageSubject" class="form-label">
+                  <span data-i18n="form_lbl_subject">Subject / Purpose</span> <span class="required-star">*</span>
+                </label>
+                <select id="messageSubject" name="subject" class="form-control" required>
+                  <option value="DFIR &amp; SOC Career Opportunity" data-i18n="form_opt_soc">DFIR &amp; SOC Career Opportunity</option>
+                  <option value="Conference / Speaking Invitation" data-i18n="form_opt_speaking">Conference / Speaking Invitation (Ekoparty &amp; More)</option>
+                  <option value="Community &amp; Mentorship Collaboration" data-i18n="form_opt_mentorship">Community &amp; Mentorship (Bug Bounty Girls / SteamGirls)</option>
+                  <option value="General Professional Inquiry" data-i18n="form_opt_general">General Professional Inquiry</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="messageBody" class="form-label">
+                  <span data-i18n="form_lbl_msg">Message</span> <span class="required-star">*</span>
+                </label>
+                <textarea id="messageBody" name="message" rows="5" class="form-control" placeholder="Describe the opportunity, project, or event..." required></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary" id="submitBtn">
+                  <span data-i18n="form_btn_send">Send Message</span>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                </button>
+                <span class="anti-spam-badge">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                  </svg>
+                  <span data-i18n="form_anti_spam">Bot-Protected Dispatch</span>
+                </span>
+              </div>
+
+              <!-- Inline Feedback Banner -->
+              <div id="formFeedback" class="form-feedback hidden" role="alert"></div>
+            </form>
+          </div>
+
+          <!-- Contact Channels Sidebar -->
+          <div class="contact-sidebar">
+            <!-- GitHub Channel Card -->
+            <a href="https://github.com/PuaBlue" target="_blank" rel="noopener noreferrer" class="channel-card">
+              <div class="channel-header">
+                <div class="channel-title" data-i18n="contact_gh_title">GitHub Profile</div>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" class="channel-icon">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+              </div>
+              <div class="channel-value">@PuaBlue</div>
+              <div class="channel-desc" data-i18n="contact_gh_desc">Public security repos &amp; code</div>
+            </a>
+
+            <!-- Microsoft Learn Channel Card -->
+            <a href="https://learn.microsoft.com/es-es/users/paulavillegas-3482/achievements#badges-section" target="_blank" rel="noopener noreferrer" class="channel-card">
+              <div class="channel-header">
+                <div class="channel-title" data-i18n="contact_msft_title">Microsoft Learn</div>
+                <svg viewBox="0 0 23 23" width="18" height="18" aria-hidden="true" class="channel-icon">
+                  <path fill="#f25022" d="M1 1h10v10H1z"/>
+                  <path fill="#00a4ef" d="M1 12h10v10H1z"/>
+                  <path fill="#7fba00" d="M12 1h10v10H12z"/>
+                  <path fill="#ffb900" d="M12 12h10v10H12z"/>
+                </svg>
+              </div>
+              <div class="channel-value">paulavillegas-3482</div>
+              <div class="channel-desc" data-i18n="contact_msft_desc">Verified badges &amp; skilling achievements</div>
+            </a>
+
+            <!-- LinkedIn Channel Card -->
+            <a href="https://www.linkedin.com/in/puasec/" target="_blank" rel="noopener noreferrer" class="channel-card">
+              <div class="channel-header">
+                <div class="channel-title" data-i18n="contact_li_title">LinkedIn Profile</div>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" class="channel-icon">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              </div>
+              <div class="channel-value">/in/puasec</div>
+              <div class="channel-desc" data-i18n="contact_li_desc">Connect, network, &amp; view recommendations</div>
+            </a>
+
+            <!-- Instagram Channel Card -->
+            <a href="https://www.instagram.com/pua.blue/" target="_blank" rel="noopener noreferrer" class="channel-card">
+              <div class="channel-header">
+                <div class="channel-title" data-i18n="contact_ig_title">Instagram (Content)</div>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" class="channel-icon">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </div>
+              <div class="channel-value">@pua.blue</div>
+              <div class="channel-desc" data-i18n="contact_ig_desc">Cybersecurity education &amp; defensive tips</div>
+            </a>
+
+            <div class="channel-card">
+              <div class="channel-header">
+                <div class="channel-title" data-i18n="contact_loc_title">Location &amp; Work Mode</div>
+                <span class="location-dot">●</span>
+              </div>
+              <div class="channel-value" data-i18n="contact_loc_val">Buenos Aires, Argentina</div>
+              <div class="channel-desc" data-i18n="contact_loc_desc">Open to remote &amp; international engagements</div>
+            </div>
+
+            <div class="privacy-note-card">
+              <div class="privacy-note-title">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <span data-i18n="contact_priv_title">Privacy &amp; Security Note</span>
+              </div>
+              <p class="privacy-note-text" data-i18n="contact_priv_desc">
+                Direct plaintext emails are obscured to mitigate automated bot scrapers and phishing harvesters. All submissions route securely to Paula's authenticated inbox.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Minimalist Footer -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-left">
+          <span>&copy; <span id="currentYear"></span> Paula Sabrina Angeles Villegas</span>
+          <span class="footer-sep">&bull;</span>
+          <span data-i18n="contact_loc_val">Buenos Aires, Argentina</span>
+          <span class="footer-sep">&bull;</span>
+          <span data-i18n="footer_rights">Cybersecurity &amp; DFIR Portfolio</span>
+        </div>
+        <div class="footer-right">
+          <a href="#hero" data-i18n="footer_top">Back to Top &uarr;</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Toast Notification for Copied Items -->
+  <div id="toastNotification" class="toast hidden" role="status" aria-live="polite">
+    Copied to clipboard!
+  </div>
+
+  <!-- Scripts -->
+  <script src="translations.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

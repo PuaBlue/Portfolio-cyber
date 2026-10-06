@@ -1,0 +1,18 @@
+/*
+  # Enforce HTTPS
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  
+  # Prevent MIME-type sniffing
+  X-Content-Type-Options: nosniff
+  
+  # Prevent Clickjacking
+  X-Frame-Options: DENY
+  
+  # Strict Referrer Policy
+  Referrer-Policy: strict-origin-when-cross-origin
+  
+  # Restrict browser APIs / hardware access
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  
+  # Content Security Policy (Allows Google Fonts & Self-Hosted Assets)
+  Content-Security-Policy: default-src 'self'; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self'; img-src 'self' data:; connect-src 'self' https://formspree.io https://api.web3forms.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' mailto: https://formspree.io https://api.web3forms.com;
