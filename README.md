@@ -2,6 +2,10 @@
 
 A professional, high-performance, and minimalistic portfolio website designed for **Paula Villegas** (`pua.sec`), showcasing specialized SOC experience, Digital Forensics & Incident Response (DFIR) expertise, engineering education, Ekoparty speaking engagements, community leadership, and cybersecurity content creation.
 
+Available on:
+
+https://www.puasecurity.dev
+
 ---
 
 ## 🌐 Multilingual Support (EN, ES, JA)
