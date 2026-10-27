@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollSpy();
   initContactForm();
   initAsciiEye();
+  initThmBadgeHelper();
 });
 
 /**
@@ -472,4 +473,21 @@ function initAsciiEye() {
   }
 
   scheduleBlink();
+}
+
+/**
+ * 9. TryHackMe Badge Protocol Helper
+ * TryHackMe badge embeds require an HTTP/HTTPS origin and display an error card on local file:/// URLs.
+ */
+function initThmBadgeHelper() {
+  if (window.location.protocol === 'file:') {
+    const container = document.querySelector('.thm-badge-container');
+    if (container && !document.getElementById('thmProtocolNotice')) {
+      const notice = document.createElement('div');
+      notice.id = 'thmProtocolNotice';
+      notice.className = 'thm-protocol-warning';
+      notice.textContent = 'ℹ️ Note: TryHackMe restricts automated badge embedding on local file:/// paths for security. Run a local server (python -m http.server 8000) or deploy to Vercel to display live stats.';
+      container.appendChild(notice);
+    }
+  }
 }

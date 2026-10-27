@@ -1114,6 +1114,157 @@ html[data-theme='light'] .msft-learn-banner {
   box-shadow: 0 4px 20px rgba(124, 58, 237, 0.08);
 }
 
+/* TryHackMe Featured Banner & Live Badge */
+.thm-profile-banner {
+  background: linear-gradient(135deg, rgba(28, 20, 52, 0.85) 0%, rgba(18, 14, 38, 0.95) 100%);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 2rem;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.thm-profile-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #ea2f37 0%, var(--accent-primary) 50%, #818cf8 100%);
+}
+
+.thm-profile-banner:hover {
+  border-color: rgba(234, 47, 55, 0.4);
+  box-shadow: 0 8px 28px rgba(234, 47, 55, 0.12), 0 4px 16px var(--accent-glow);
+}
+
+.thm-banner-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.thm-banner-icon {
+  background: rgba(234, 47, 55, 0.1);
+  border: 1px solid rgba(234, 47, 55, 0.3);
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.thm-tag-pill {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #ff5e67;
+  background: rgba(234, 47, 55, 0.12);
+  border: 1px solid rgba(234, 47, 55, 0.25);
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  margin-bottom: 0.45rem;
+  letter-spacing: 0.04em;
+}
+
+.thm-banner-text h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.thm-banner-text p {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  max-width: 680px;
+}
+
+.thm-banner-actions {
+  display: flex;
+  align-items: center;
+}
+
+.thm-badge-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 1rem;
+  background: rgba(13, 10, 26, 0.6);
+  border: 1px dashed rgba(168, 85, 247, 0.25);
+  border-radius: var(--radius-md);
+  margin-top: 0.25rem;
+  overflow: hidden;
+  min-height: 240px;
+  text-align: center;
+}
+
+.thm-badge-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.thm-badge-inner iframe {
+  border: none !important;
+  max-width: 100% !important;
+  border-radius: var(--radius-md);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+}
+
+.thm-badge-caption {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.85rem;
+}
+
+.thm-protocol-warning {
+  margin-top: 0.85rem;
+  padding: 0.6rem 1rem;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: var(--radius-sm);
+  color: #fbbf24;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  line-height: 1.5;
+  max-width: 520px;
+}
+
+html[data-theme='light'] .thm-profile-banner {
+  background: linear-gradient(135deg, #ffffff 0%, #fff7f7 100%);
+  border-color: rgba(234, 47, 55, 0.2);
+  box-shadow: 0 4px 20px rgba(234, 47, 55, 0.08);
+}
+
+html[data-theme='light'] .thm-badge-container {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(234, 47, 55, 0.25);
+}
+
+@media (max-width: 680px) {
+  .thm-profile-banner {
+    padding: 1.5rem;
+  }
+  .thm-banner-content {
+    flex-direction: column;
+  }
+}
+
 /* ==========================================================================
    SECTION 2: PROJECTS & COMMUNITY
    ========================================================================== */

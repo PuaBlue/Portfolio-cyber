@@ -37,7 +37,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; font-src 'self' https://fonts.gstatic.com; style-src 'self' https://fonts.googleapis.com; script-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; frame-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests;"
+          "value": "default-src 'self'; font-src 'self' https://fonts.gstatic.com; style-src 'self' https://fonts.googleapis.com; script-src 'self' https://tryhackme.com; img-src 'self' data: https://tryhackme.com https://*.tryhackme.com https://tryhackme-badges.s3.amazonaws.com; connect-src 'self' https://tryhackme.com https://*.tryhackme.com; object-src 'none'; frame-src 'self' https://tryhackme.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests;"
         }
       ]
     }

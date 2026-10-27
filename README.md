@@ -45,6 +45,7 @@ Language preferences are automatically persisted in `localStorage` and synchroni
   - Networking Basics &bull; Cisco Networking Academy
   - FCF & FCA Certifications &bull; Fortinet Training Institute
   - Microsoft Learn &bull; Verified Profile Badges &amp; Modules ([Achievements](https://learn.microsoft.com/es-es/users/paulavillegas-3482/achievements#badges-section))
+  - TryHackMe &bull; Live Rank (Top 6%), Cyber Defense &amp; CTF Badges ([@Sn4ke.C4t Profile](https://tryhackme.com/p/Sn4ke.C4t))
 
 ### 2. Section 02: "Technical Projects" (`#projects`)
 - **Public GitHub Showcase**: Direct link to Paula's open-source repositories and security tooling at [github.com/PuaBlue](https://github.com/PuaBlue).
@@ -64,6 +65,7 @@ Language preferences are automatically persisted in `localStorage` and synchroni
 - **Verified Channels**:
   - GitHub: [github.com/PuaBlue](https://github.com/PuaBlue)
   - Microsoft Learn: [paulavillegas-3482 Badges & Achievements](https://learn.microsoft.com/es-es/users/paulavillegas-3482/achievements#badges-section)
+  - TryHackMe: [@Sn4ke.C4t Profile & Live Score](https://tryhackme.com/p/Sn4ke.C4t)
   - LinkedIn: [linkedin.com/in/puasec/](https://www.linkedin.com/in/puasec/)
   - Instagram: [@pua.blue](https://www.instagram.com/pua.blue/)
 - **Anti-Scraping Interactive Form**: User inquiries route directly to Paula's inbox with recipient obfuscation in the static markup, protecting her personal email against malicious crawler harvesting.

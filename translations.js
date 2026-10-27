@@ -97,6 +97,12 @@ const translations = {
     msft_banner_desc: "Continuous technical skilling in cybersecurity operations, threat protection, and Microsoft Defender / Azure architectures.",
     msft_banner_btn: "View Microsoft Badges",
 
+    thm_banner_tag: "TRYHACKME &bull; RANKED TOP 6%",
+    thm_banner_title: "TryHackMe &bull; Live Cyber Defense &amp; CTF Ranking",
+    thm_banner_desc: "Hands-on threat emulation, offensive techniques, network defense labs, and continuous SOC problem solving.",
+    thm_banner_btn: "View TryHackMe Profile",
+    thm_score_badge_hint: "Live automated badge updated directly via TryHackMe platform stats.",
+
     // Section 2: Technical Projects
     sec2_badge: "SECTION 02",
     sec2_title: "Technical Projects",
@@ -178,6 +184,8 @@ const translations = {
     contact_gh_desc: "Public security repos &amp; code",
     contact_msft_title: "Microsoft Learn",
     contact_msft_desc: "Verified badges &amp; skilling achievements",
+    contact_thm_title: "TryHackMe",
+    contact_thm_desc: "Hands-on labs, CTF challenges &amp; Top 6% ranking",
     contact_li_title: "LinkedIn Profile",
     contact_li_desc: "Connect, network, &amp; view recommendations",
     contact_ig_title: "Instagram (Content)",
@@ -287,6 +295,12 @@ const translations = {
     msft_banner_desc: "Capacitación técnica continua en operaciones de ciberseguridad, inteligencia de amenazas y arquitecturas Microsoft Defender / Azure.",
     msft_banner_btn: "Ver Insignias de Microsoft",
 
+    thm_banner_tag: "TRYHACKME &bull; TOP 6% GLOBAL",
+    thm_banner_title: "TryHackMe &bull; Defensa Cibernética y Ranking CTF en Vivo",
+    thm_banner_desc: "Validación práctica en laboratorios de emulación de amenazas, técnicas ofensivas, defensa de redes y resolución continua de retos en SOC.",
+    thm_banner_btn: "Ver Perfil en TryHackMe",
+    thm_score_badge_hint: "Insignia automatizada actualizada en tiempo real con las estadísticas oficiales de TryHackMe.",
+
     // Section 2: Technical Projects
     sec2_badge: "SECCIÓN 02",
     sec2_title: "Proyectos Técnicos",
@@ -368,6 +382,8 @@ const translations = {
     contact_gh_desc: "Repositorios y código de seguridad",
     contact_msft_title: "Microsoft Learn",
     contact_msft_desc: "Insignias verificadas y logros de aprendizaje",
+    contact_thm_title: "TryHackMe",
+    contact_thm_desc: "Laboratorios prácticos, retos CTF y ranking Top 6%",
     contact_li_title: "Perfil de LinkedIn",
     contact_li_desc: "Conectar, crear redes y ver recomendaciones",
     contact_ig_title: "Instagram (Contenido)",
@@ -477,6 +493,12 @@ const translations = {
     msft_banner_desc: "サイバーセキュリティ運用、脅威インテリジェンス、Microsoft Defender / Azure アーキテクチャに関する継続的な技術習得。",
     msft_banner_btn: "Microsoft バッジを見る",
 
+    thm_banner_tag: "TRYHACKME &bull; 上位6%ランカー",
+    thm_banner_title: "TryHackMe &bull; サイバー防衛実践演習とリアルタイムランキング",
+    thm_banner_desc: "攻撃・防御手法の実践検証、CTFチャレンジ、ネットワーク防衛ラボ、およびSOCインシデント解決演習。",
+    thm_banner_btn: "TryHackMeプロフィールを見る",
+    thm_score_badge_hint: "TryHackMe公式プラットフォームのスコアと自動同期するライブバッジ。",
+
     // Section 2: Technical Projects
     sec2_badge: "セクション 02",
     sec2_title: "技術プロジェクト",
@@ -558,6 +580,8 @@ const translations = {
     contact_gh_desc: "公開リポジトリ・ソースコード",
     contact_msft_title: "Microsoft Learn",
     contact_msft_desc: "認定バッジおよび学習達成実績",
+    contact_thm_title: "TryHackMe",
+    contact_thm_desc: "実践ラボ・CTFチャレンジ・上位6%ランカー",
     contact_li_title: "LinkedIn プロフィール",
     contact_li_desc: "つながり・推薦文の確認",
     contact_ig_title: "Instagram (コンテンツ)",
